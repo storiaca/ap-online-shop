@@ -1,0 +1,6 @@
+.products-wrap {
+  @apply max-w-7xl relative mx-auto pt-32;
+  h2 {
+    @apply text-6xl mb-5;
+  }
+}
