@@ -16,31 +16,21 @@ const Product = ({
   // useEffect(() => {
   //   setPictures(images);
   // }, []);
-  const itemsEls = useRef(new Array());
-
-  {
-    images.map((item) => {
-      const getRef = (element: number) => itemsEls.current.push(element);
-      return <p>{item}</p>;
-    });
-  }
 
   //console.log(pictures);
 
   return (
-    <div className="product-card-wrap">
-      <div className="product-card" key={id}>
-        <div>
-          {/* {images.map((image, index) => (
+    <div className="product-card" id={id}>
+      <div>
+        {/* {images.map((image, index) => (
             <img src={image[index]} alt="Image" />
           ))} */}
-          {/* <img src={pictures[0]} alt="Image" /> */}
-        </div>
-        <h3>{name}</h3>
-        <h4>{description}</h4>
-        {features}
-        <p>{price}</p>
+        {/* <img src={pictures[0]} alt="Image" /> */}
       </div>
+      <h3>{name}</h3>
+      <h4>{description}</h4>
+      {features}
+      <p>{price}</p>
     </div>
   );
 };
