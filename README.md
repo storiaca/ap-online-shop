@@ -2,7 +2,7 @@
 
 ## Install packages with:
 
-npm i
+npm install
 
 ## Run project with:
 

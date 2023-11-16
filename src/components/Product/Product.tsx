@@ -1,15 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { type Product as ProductProps } from "../../store/store-shop";
+import { Link } from "react-router-dom";
+
+import Button from "../Button/Button";
 import "./product.css";
 
-const Product = ({
-  id,
-  name,
-  description,
-  features,
-  price,
-  images,
-}: ProductProps) => {
+const Product = ({ id, name, description, price, images }: ProductProps) => {
   //console.log("images", images);
   //const [pictures, setPictures] = useState<string[]>([]);
   //const picturesRef = useRef(null);
@@ -27,10 +23,12 @@ const Product = ({
           ))} */}
         {/* <img src={pictures[0]} alt="Image" /> */}
       </div>
-      <h3>{name}</h3>
+      <h3>
+        <Link to={`/product/${id}`}>{name}</Link>
+      </h3>
       <h4>{description}</h4>
-      {features}
       <p>{price}</p>
+      <Button>Add to cart</Button>
     </div>
   );
 };
