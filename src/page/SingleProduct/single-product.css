@@ -1,0 +1,26 @@
+.single-product-wrap {
+  @apply max-w-6xl mx-auto pt-[12rem] md:pt-32 px-4;
+  .single-product-image-wrap {
+    .single-product-image {
+      @apply w-full h-auto md:w-1/2;
+    }
+  }
+  .single-product-title {
+    @apply my-4 text-[1.5rem] md:text-5xl text-orange-600;
+  }
+  .single-product-description {
+    @apply mb-8 text-base md:text-[2rem];
+  }
+  .single-product-keywords {
+    @apply text-base md:text-[1.3rem] my-3;
+    span {
+      @apply text-orange-600;
+    }
+  }
+  .single-product-price {
+    @apply text-base md:text-[2rem] mt-5;
+    span {
+      @apply text-orange-600;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .search-wrap {
-  @apply p-2;
+  @apply p-2 w-full relative bottom-3 md:w-[400px];
 
   .search-input {
-    @apply h-8 rounded-sm;
+    @apply h-8 rounded-sm w-full text-base text-black pl-3;
   }
 }

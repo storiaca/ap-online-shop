@@ -5,7 +5,6 @@ import {
   useState,
   useEffect,
 } from "react";
-import { produce } from "immer";
 
 import { productsData } from "../data/productsData";
 
@@ -65,6 +64,9 @@ type DeleteProductAction = {
 type Action = AddProductAction | DeleteProductAction;
 
 function storeReducer(state: StoreData, action: Action): StoreData {
+  if (state.cart.find((item) => item.id === action.payload.id)) {
+    return state;
+  }
   if (action.type === "ADD_PRODUCT") {
     return {
       ...state,

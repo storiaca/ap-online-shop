@@ -17,47 +17,44 @@ import Button from "../Button/Button";
 import "./product.css";
 
 const Product = ({ id, name, description, price, images }: ProductProps) => {
-  const { addProduct, cart } = useContext(StoreContext)!;
-  //console.log("images", images);
-  //const [pictures, setPictures] = useState<string[]>([]);
-  //const picturesRef = useRef(null);
-  // useEffect(() => {
-  //   setPictures(images);
-  // }, []);
-
-  console.log({ cart });
-
+  const { addProduct } = useContext(StoreContext)!;
   return (
     <div className="product-card">
-      <div>
-        {/* {images &&
-          images.map((image, index) => <img src={image[index]} alt="Image" />)} */}
-        {/* // <img src={image[index][0]} alt="Image" /> */}
-        {/* {images && (
-          <img
-            src={images.reduce((item, acc) => console.log(item), {})}
-            alt="Image"
-          />
-        )} */}
+      <div className="product-card-image-wrap">
+        {images && (
+          <Link to={`/product/${id}`}>
+            <picture>
+              <img
+                src={images[0]}
+                alt={description}
+                className="product-card-image"
+              />
+            </picture>
+          </Link>
+        )}
       </div>
-      <h3>
-        <Link to={`/product/${id}`}>{name}</Link>
-      </h3>
-      <h4>{description}</h4>
-      <p>{price}</p>
-      <Button
-        onClick={() =>
-          addProduct({
-            id: id,
-            name: name,
-            description: description,
-            price: +price,
-            images: images,
-          })
-        }
-      >
-        Add to cart
-      </Button>
+      <div className="product-card-text">
+        <h3 className="product-card-title">
+          <Link to={`/product/${id}`}>{name}</Link>
+        </h3>
+        <h4 className="product-card-description">{description}</h4>
+        <p className="product-card-price">Price: $ {price}</p>
+      </div>
+      <div className="product-card-add-button">
+        <Button
+          onClick={() =>
+            addProduct({
+              id: id,
+              name: name,
+              description: description,
+              price: +price,
+              images: images,
+            })
+          }
+        >
+          Add to cart
+        </Button>
+      </div>
     </div>
   );
 };

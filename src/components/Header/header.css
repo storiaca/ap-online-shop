@@ -1,5 +1,5 @@
 .header-wrap {
-  @apply text-6xl z-10 fixed px-4 items-center flex justify-between bg-[#ff8c00] text-white w-full;
+  @apply text-6xl z-10 fixed px-4 items-center flex flex-col pb-4 md:flex-row md:pb-0 justify-between bg-[#ff8c00] text-white w-full;
   .header-cart {
     @apply relative;
     .cart-icon {

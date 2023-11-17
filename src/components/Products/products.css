@@ -1,5 +1,5 @@
 .products-page {
-  @apply max-w-7xl relative mx-auto pt-32 px-4 md:px-0;
+  @apply max-w-7xl relative mx-auto pt-[12rem] md:pt-32 px-4;
   h2 {
     @apply text-6xl mb-5;
   }

@@ -1,5 +1,8 @@
+import { useState } from "react";
 import "./search.css";
 const Search = () => {
+  const [searchInput, setSearchInput] = useState<string>("");
+
   return (
     <div className="search-wrap">
       <form>
@@ -8,10 +11,12 @@ const Search = () => {
         </label>
         <input
           type="text"
-          onChange={() => {}}
           className="search-input"
           id="search"
           name="search"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
+          placeholder="Search"
         />
         {/* <span>
           <svg

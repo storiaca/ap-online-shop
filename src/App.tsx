@@ -4,7 +4,6 @@ import Cart from "./page/Cart/Cart";
 import Header from "./components/Header/Header";
 import SingleProduct from "./page/SingleProduct/SingleProduct";
 import StoreContextProvider from "./store/store-shop";
-StoreContextProvider;
 function App() {
   return (
     <StoreContextProvider>
