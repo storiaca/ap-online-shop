@@ -10,12 +10,6 @@ const SingleProduct = () => {
 
   const singleProduct = storeCtx.products.filter((item) => item.id === id);
 
-  console.log(
-    "single Product",
-    singleProduct[0].name,
-    singleProduct[0].images[0]
-  );
-
   return (
     <div className="single-product-wrap">
       <div className="single-product-image-wrap">
