@@ -1,3 +1,7 @@
 .search-wrap {
   @apply p-2;
+
+  .search-input {
+    @apply h-8 rounded-sm;
+  }
 }

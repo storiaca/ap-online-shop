@@ -1,33 +1,27 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import Product from "../Product/Product";
-import { type Product as ProductType } from "../../store/store-shop";
-import { productsData } from "../../data/productsData";
+import { StoreContext } from "../../store/store-shop";
 
 import "./products.css";
 const Products = () => {
-  const [products, setProducts] = useState<ProductType[] | null>([]);
-
-  useEffect(() => {
-    setProducts(productsData?.products?.data?.items);
-  }, []);
-
-  console.log(products);
-
+  const storeCtx = useContext(StoreContext)!;
   return (
-    <div className="products-wrap">
+    <div className="products-page">
       <h2>Products</h2>
-      {products &&
-        products.map((item) => (
-          <Product
-            key={item.id}
-            id={item.id}
-            name={item.name}
-            description={item.description}
-            features={item.features}
-            price={item.price}
-            images={item.images}
-          />
-        ))}
+      <div className="products-wrap">
+        {storeCtx.products &&
+          storeCtx.products.map((item, index) => (
+            <Product
+              key={item.id}
+              id={item.id}
+              name={item.name}
+              description={item.description}
+              features={item.features}
+              price={item.price}
+              images={item.images}
+            />
+          ))}
+      </div>
     </div>
   );
 };

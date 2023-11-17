@@ -1,3 +1,12 @@
 .header-wrap {
-  @apply text-6xl z-10 fixed px-3 py-4 flex justify-between bg-slate-600 text-white w-full;
+  @apply text-6xl z-10 fixed px-4 items-center flex justify-between bg-[#ff8c00] text-white w-full;
+  .header-cart {
+    @apply relative;
+    .cart-icon {
+      @apply text-blue-900;
+    }
+    .cart-bagde {
+      @apply absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-4 -end-2;
+    }
+  }
 }

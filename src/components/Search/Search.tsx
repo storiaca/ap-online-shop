@@ -6,7 +6,13 @@ const Search = () => {
         <label htmlFor="search" className="sr-only">
           Search
         </label>
-        <input type="text" className="search-input" id="search" />
+        <input
+          type="text"
+          onChange={() => {}}
+          className="search-input"
+          id="search"
+          name="search"
+        />
         {/* <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
